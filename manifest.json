@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "JLCPCB JPY Auto Converter",
+  "version": "1.0",
+  "description": "JLCPCBの価格を最新レートで日本円に自動換算します（8時間キャッシュ対応）",
+  "permissions": ["storage"],
+  "host_permissions": ["https://api.forexrateapi.com/*", "https://*.jlcpcb.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://*.jlcpcb.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
